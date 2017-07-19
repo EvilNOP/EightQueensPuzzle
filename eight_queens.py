@@ -24,3 +24,10 @@ def queens(num=8, state=()):
             else:
                 for result in queens(num, state + (pos,)):
                     yield (pos,) + result
+
+def pretty_print(solution):
+    def line(pos, length=len(solution)):
+        return '. ' * (pos) + 'X ' + '. ' * (length-pos-1)
+        
+    for pos in solution:
+        print(line(pos))
